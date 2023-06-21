@@ -1,0 +1,36 @@
+To use the code, you need to execute it in a Python environment that supports the required dependencies (such as the csv module). Here's a breakdown of the class methods and their functionalities:
+
+__init__(self): Initializes the CSVFileHandler class by setting up the required file paths and regex patterns for name and number validation.
+folder_creation(self): Creates a "Finding_Number" folder on the desktop if it doesn't already exist. Returns the path of the created or existing folder.
+validate_input(self, input_str, pattern): Validates the input string based on the provided regex pattern.
+get_finder_name_from_csv(self): Reads the CSV file and retrieves the names of finders from it. Excludes the header row.
+finding_favorite(self): Displays a menu and allows the user to choose options for adding data, finding a favorite number, removing names, or exiting the program.
+create_csv_file(self): Creates the CSV file (if it doesn't exist) and prompts the user to enter data entries, including name and favorite number.
+read_csv_file(self): Reads the CSV file and searches for a favorite number based on the finder's name. Asks the user to input a number to find whether it matches the favorite number.
+remove_name_from_csv_file(self): Reads the CSV file, displays the available names, and prompts the user to enter a name to remove. Removes the name if found in the CSV file.
+
+
+
+
+User
+provide the basic explanation of the program
+ChatGPT
+Certainly! The provided program is a simple command-line tool that allows users to manage a CSV file containing favorite numbers of people. Here's a step-by-step explanation of its basic functionality:
+
+The program creates an instance of the CSVFileHandler class and sets up the necessary variables and paths.
+
+Upon execution, the program presents a menu with the following options:
+
+Option 1: Adding Data - Allows the user to add data entries to the CSV file. The user can enter their name and favorite number, which are validated based on regex patterns.
+Option 2: Finding Favorite Number - Prompts the user to enter their name and searches for their favorite number in the CSV file. The user can then input a number to check if it matches the favorite number.
+Option 3: Remove - Displays the list of names available in the CSV file and allows the user to enter a name to remove from the file.
+Option 4: Exit - Terminates the program.
+If the user selects Option 1 (Adding Data), they are prompted to enter the number of data entries they want to add. For each entry, the user provides their name and favorite number. The input values are validated, and if the name already exists in the CSV file, the entry is skipped.
+
+If the user selects Option 2 (Finding Favorite Number), they are prompted to enter their name. The program searches for the name in the CSV file and retrieves the corresponding favorite number. The user is then asked to input a number to check if it matches the favorite number. They have three attempts to guess the correct number, with feedback provided based on the closeness of the guess.
+
+If the user selects Option 3 (Remove), they are shown the list of names available in the CSV file. They can enter a name to remove from the file. If the name is found, it is removed from the CSV file.
+
+If the user selects Option 4 (Exit), the program terminates.
+
+The program utilizes the csv module to read from and write to the CSV file and uses regular expressions (regex) for input validation. It also handles various exceptions, such as file-related errors and keyboard interruptions, to ensure a smooth execution flow.
